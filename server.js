@@ -39,6 +39,6 @@ app.get('/profile/:id',(req,res)=>{onSearch(req,res,db)})
 
 app.put('/image',(req,res)=>{onImage(req,res,db)})
 
-app.listen(3000,()=>{
-    console.log('server is running');
+app.listen(process.env.PORT || 3000,()=>{
+    console.log('server is running',process.env.PORT);
 });
