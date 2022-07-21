@@ -11,10 +11,10 @@ const onImage = require('./controllers/entry-count');
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'postgresql-concave-13722',
-      user : 'postgres',
-      password : 'virmani5',
-      database : 'smart-brain'
+      host : process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
     }
   })
 
