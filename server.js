@@ -11,10 +11,11 @@ const onImage = require('./controllers/entry-count');
 const db = knex({
     client: 'pg',
     connection: {
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false
-      }
+      host : process.env.PGHOST,
+      port : process.env.PORT,
+      user : process.env.PGUSER,
+      password : process.env.PGPASSWORD,
+      database : process.env.PGDATABASE
     }
   })
 
